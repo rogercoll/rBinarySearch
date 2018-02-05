@@ -32,14 +32,24 @@ Basic example:
 var rvector = require('rbinarysearch');
 
 var test = new rvector();
-var values = [1,-2,13,4,5,6,7,23,9,0];
+var values = [1,-2,13,4,5,6,7,23,9,0]; //Can also be a strings vector ex: ["hi","abc,"roger"]
 
+//Adding values
 test.addElems(values);
-var pos = test.binarysearch(13);
-console.log(pos);
+test.addElems(6); //"hello" if its an array of strings
+
+//Deleting elements
+var aux = [9,-2,23,13,123,0];
+test.deleteElems(aux);
 test.deleteElems(6);
-test.deleteElems(23);
-test.printVec();
+
+//Binary Search
+var pos = test.binarysearch(13); //if array of strings "roger"
+console.log(pos);
+
+//Info
+var actual_array = test.getvec();
+test.printVec(); //it's a console log of the array
 
 ```
 
